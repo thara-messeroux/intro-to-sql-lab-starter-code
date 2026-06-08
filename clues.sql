@@ -17,6 +17,13 @@ LIMIT 1;
 -- Clue #2: Now that we're here, we have insight that Carmen was seen attending language classes in this country's officially recognized language. Check our databases and find out what language is spoken in this country, so we can call in a translator to work with you.
 
 -- Write SQL query here
+SELECT language 
+FROM countrylanguages 
+WHERE countrycode = 'VAT';
+ language 
+----------
+ Italian
+(1 row)
 
 
 -- Clue #3: We have new news on the classes Carmen attended – our gumshoes tell us she's moved on to a different country, a country where people speak only the language she was learning. Find out which nearby country speaks nothing but that language.
