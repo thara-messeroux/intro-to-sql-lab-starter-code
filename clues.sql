@@ -54,6 +54,15 @@ WHERE countrycode = 'SMR' AND name != 'San Marino';
 -- Clue #5: Oh no, she pulled a switch – there are two cities with very similar names, but in totally different parts of the globe! She's headed to South America as we speak; go find a city whose name is like the one we were headed to, but doesn't end the same. Find out the city, and do another search for what country it's in. Hurry!
 
 -- Write SQL query here
+SELECT cities.name, countries.name AS country_name 
+FROM cities 
+JOIN countries ON cities.countrycode = countries.code 
+WHERE countries.continent = 'South America' AND cities.name LIKE 'Serra%';
+
+--  name  | country_name 
+-- -------+--------------
+--  Serra | Brazil
+-- (1 row)
 
 
 -- Clue #6: We're close! Our South American agent says she just got a taxi at the airport, and is headed towards
